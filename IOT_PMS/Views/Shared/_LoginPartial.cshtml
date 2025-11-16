@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNet.Identity
+@using IOT_PMS.Models
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        var db = new ApplicationDbContext();
+        var UserID = User.Identity.GetUserId();
+        var CurrentUser = db.Users.Where(a => a.Id == UserID).SingleOrDefault();
+
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <strong>مرحبا بك: @CurrentUser.UserName</strong>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <div class="navbar-user">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <a href="~/Account/ViewProfile" class="text-center">
+                                        <span class="glyphicon glyphicon-user image-size"></span>
+                                    </a> 
+                                </div>
+                                <div class="col-lg-8">
+                                    <a href="~/Account/EditProfile" class="btn btn-primary btn-block">تعديل البيانات</a>
+                                    @*<a href="~/BloodTypes" class="btn btn-primary btn-block">زمرة الدم</a>*@
+                                    <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-danger btn-block">تسجيل الخروج</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="~/Account/Login">
+                <i class="glyphicon glyphicon-user"></i>
+                تسجيل الدخول
+            </a>
+        </li>
+        <li>
+            <a href="~/Account/Register">
+                <i class="glyphicon glyphicon glyphicon-cog"></i>
+                الاشتراك
+            </a>
+        </li>
+    </ul>
+}

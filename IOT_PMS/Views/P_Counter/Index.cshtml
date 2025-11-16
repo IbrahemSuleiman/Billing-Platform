@@ -1,0 +1,43 @@
+﻿@model IEnumerable<IOT_PMS.Models.P_Counter>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>سجل الاتصالات</h2>
+
+<h2> </h2> 
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.ActionLink("حذف", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+
+
+</table>
+
+<p>
+    @Html.ActionLink("إضافة اتصال جديد", "Create")
+</p>

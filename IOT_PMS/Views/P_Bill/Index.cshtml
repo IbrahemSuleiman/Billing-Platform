@@ -1,0 +1,47 @@
+﻿@model IEnumerable<IOT_PMS.Models.P_Bill>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>قائمة الفواتير</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateofAnnounce)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateofAnnounce)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.ActionLink("حذف", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

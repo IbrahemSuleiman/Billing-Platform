@@ -1,0 +1,140 @@
+﻿
+.P_class {
+    text-align: justify;
+}
+
+
+element.style {
+    text-align: justify;
+}
+
+@font-face {
+    font-family:myfont;
+    src: url('../fonts/GE_SS_Two_Bold.otf');
+}
+.padd{
+    margin-top:75px;
+    margin-right:50px;
+}
+
+
+.Titlestyle {
+    margin-top: 0px;
+}
+
+@media (min-width: 992px)
+.col-md-4 {
+    width: 33.33333333333333%;
+    margin-top: -20px;
+    padding-top:25px;
+}
+
+body {
+    padding-top:80px;
+}
+
+
+.nav > li{
+    position:relative;
+    display:block;
+    height:60px;
+    padding-top:5px;
+    font-family:myfont;
+}
+
+
+
+.myfooter{
+    padding:10px;
+    font-family:'Times New Roman', Times, serif;
+    background-color:black;
+}
+
+
+
+.font_Header{
+    color: wheat;
+        font-size: 16Px;
+}
+
+.font_footer1 {
+    font-size: 24px;
+    color: wheat;
+}
+
+.font_footer2 {
+    font-size: 14px;
+    color: white;
+}
+
+.font_footer3 {
+    font-size: 16px;
+}
+.subfooter{
+    padding:10px;
+    text-align:center;
+    font-family:'Times New Roman', Times, serif;
+    background-color:black;
+}
+
+.image-set{
+    width:50PX;
+    height:50px;
+    margin-top:-4px;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    FONT-VARIANT: JIS04;
+    border-color: #ccc;
+    margin-top: 1px;
+}
+
+.navbar-brand {
+    float: left;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    margin-top: -5px;
+    margin-bottom: -25px;
+}
+
+#searchName
+{
+    width:220px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    background-color:white;
+    background-image: url('../images/search.png');
+    background-repeat:no-repeat;
+    background-position:1px 1px;
+    padding: 12px 20px 12px 12px;
+    transition:width 0.4s ease-in-out;
+}
+
+    #searchName:focus {
+    width:200%;
+    }
+
+.image-size {
+font-size:90px;
+}
+
+
+.navbar-user
+{
+    padding:10px;
+    padding-bottom:0px;
+    width:350px;
+}
+@media (min-width: 992px) {
+.col-md-3 {
+    width: 25%;
+}
+}
+
+
+element.style {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    height: 150;
+}

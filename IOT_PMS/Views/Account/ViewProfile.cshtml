@@ -1,0 +1,73 @@
+﻿@model  IOT_PMS.Models.ApplicationUser
+@using Microsoft.AspNet.Identity
+@using IOT_PMS.Models
+@{
+    ViewBag.Title = "ViewProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var db = new ApplicationDbContext();
+    var UserID = User.Identity.GetUserId();
+    var Current_user = db.Users.Where(a => a.Id == UserID).SingleOrDefault();
+}
+<h2>ViewProfile</h2>
+
+
+<div class="row">
+    @*//-------------------------------------------------*@
+
+    <div class="col-md-6">
+        <h2>معلومات شخصية</h2>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.MiddleName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MiddleName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Mobile)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NationalId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NationalId)
+            </dd>
+        </dl>
+
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("تعديل الحساب", "EditProfile")
+</div>
+

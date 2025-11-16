@@ -1,0 +1,58 @@
+﻿@model IOT_PMS.Models.E_Counter
+
+@{
+    ViewBag.Title = "ViewCounter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>بيانات عداد الكهرباء</h2>
+@{ if (ViewBag.Result != null)
+    {
+    <h3>@ViewBag.Result</h3>
+    <p>
+        @Html.ActionLink("الاشتراك بعداد كهرباء", "Create", "E_Counter")
+    </p>
+    }
+    else
+    {
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SerialNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SerialNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RegistrationType  )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RegistrationType)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CounterValue)
+            </dt>
+
+            <dd>
+                 kW @Html.DisplayFor(model => model.CounterValue) 
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RegistrationDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RegistrationDate)
+            </dd>
+        </dl>
+        <td>
+            @Html.ActionLink("تعديل القراءة", "Edit", new { id = Model.Id })
+        </td>
+    </div>
+        }
+    }

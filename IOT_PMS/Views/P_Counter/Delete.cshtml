@@ -1,0 +1,42 @@
+﻿@model IOT_PMS.Models.P_Counter
+
+@{
+    ViewBag.Title = " ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>هل أنت متأكد من خيار الحذف؟</h3>
+
+<div>
+    <h4 style="color:forestgreen">هذه الميزة يجب أن تكون للإدارة ولكن تم تمكينها للاختبار</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> |
+            @Html.ActionLink("العودة إلى الخلف", "Index")
+        </div>
+    }
+</div>

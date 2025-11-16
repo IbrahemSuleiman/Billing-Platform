@@ -1,0 +1,57 @@
+﻿@model IOT_PMS.Models.P_Bill
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>هل أنت متأكد من خيار الحذف؟</h3>
+
+<div>
+    <h4 style="color:forestgreen">هذه الميزة يجب أن تكون للإدارة ولكن تم تمكينها للاختبار</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateofAnnounce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateofAnnounce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> |
+            @Html.ActionLink("العودة إلى الخلف", "Index")
+        </div>
+    }
+</div>
